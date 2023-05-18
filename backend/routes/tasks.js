@@ -12,4 +12,13 @@ router.post('/create', (req, res) => {
   db.tasks.create({ title: title, catagory: catagory, points: points, userId: userId }).then((task) => {return res.json({ task: task })});
 });
 
+router.get('/tasks', async (req, res) => {
+  const userId = req.session.userId;
+  const limit = req.query.limit < 50 ? parseInt(req.query.limit) : 50, offset = req.query.offset ? parseInt(req.query.offset) : 0;
+
+  db.tasks.findAll({ where: { userId }, order: [ ['createdAt', 'DESC' ], ['id', 'DESC'] ], limit: limit, offset: offset }).then( (tasks) => {
+    return res.json({ tasks })
+  })
+})
+
 module.exports = router;
