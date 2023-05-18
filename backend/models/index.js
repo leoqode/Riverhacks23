@@ -25,4 +25,6 @@ db.userPub = require('./userPub')(sequelize, Sequelize);
 db.userAuth = require('./userAuth')(sequelize, Sequelize);
 
 // Users authentication
-db.users.hasOne(db.userAuth);
+db.userPub.hasOne(db.userAuth);
+
+module.exports = db;
