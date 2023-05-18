@@ -1,0 +1,48 @@
+{
+  "Physical": [
+    {
+        "Task": "Drink a cup of water.",
+        "Weight": 1
+    },
+    {
+        "Task": "Exercise for thirty minutes or more.",
+        "Weight": 1
+    }
+  ],
+  "Emotional": [
+    {
+        "Task": "Talk about something positive that has happened this week with a friend.",
+        "Weight": 1
+    }
+  ],
+  "Intellectual": [
+    {
+        "Task": "Spend thirty minutes studying something new.",
+        "Weight": 1
+    },
+    {
+        "Task": "Spend some time learning a new word in a different language.",
+        "Weight": 1
+    }
+  ],
+  "Spiritual": [
+    {
+        "Task": "Meditate for a period of time.",
+        "Weight": 1
+    },
+    {
+        "Task": "Reflect on today's activities.",
+        "Weight": 1
+    }
+  ],
+  "Social": [
+    {
+        "Task": "Meet up with friends.",
+        "Weight": 1
+    },
+    {
+        "Task": "Talk with your family members.",
+        "Weight": 1
+    }
+  ]
+}
