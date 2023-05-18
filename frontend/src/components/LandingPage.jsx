@@ -11,16 +11,21 @@ const LandingPage = () => {
   const [landingPageSignupButtonExtended, setLandingPageSignupButtonExtended] =
     useState(false);
 
-
   const handleLoginSignupButtonClick = () => {
-    setLandingPageLoginButtonExtended(true);
-    setLandingPageSignupButtonExtended(false);
-
+    if (landingPageLoginButtonExtended) {
+      setLandingPageLoginButtonExtended(false);
+    } else {
+      setLandingPageLoginButtonExtended(true);
+      setLandingPageSignupButtonExtended(false);
+    }
   };
   const handleSignupButtonClick = () => {
-    setLandingPageSignupButtonExtended(true);
-    setLandingPageLoginButtonExtended(false);
-
+    if (landingPageSignupButtonExtended) {
+      setLandingPageSignupButtonExtended(false);
+    } else {
+      setLandingPageSignupButtonExtended(true);
+      setLandingPageLoginButtonExtended(false);
+    }
   };
 
   return (
@@ -36,10 +41,17 @@ const LandingPage = () => {
       </header>
       <body>
         <div>Welcome! Ready to feel good?</div>
-        <button  onClick={handleLoginSignupButtonClick} className='landingPageButton'>Login</button>
-        <button onClick={handleSignupButtonClick} className='landingPageButton'>Sign Up</button>
+        <button
+          onClick={handleLoginSignupButtonClick}
+          className='landingPageButton'
+        >
+          Login
+        </button>
+        <button onClick={handleSignupButtonClick} className='landingPageButton'>
+          Sign Up
+        </button>
         {landingPageLoginButtonExtended && (
-          <LoginComponent id ='login-component-extended' />
+          <LoginComponent id='login-component-extended' />
         )}
 
         {landingPageSignupButtonExtended && (
