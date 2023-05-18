@@ -2,9 +2,9 @@ import React from "react";
 import './LoginComponent.css'
 
 
-const LoginComponent = () => {
+const LoginComponent = ({id}) => {
   return (
-    <div id="login-component-container">
+    <div id={id} >
       <form>
         <label>ACC Email: </label>
         <input type='text' placeholder='g.austincc.edu' />

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+
 import "./SignupComponent.css";
 
-const SignupComponent = () => {
+const SignupComponent = ({ id }) => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
 
@@ -30,7 +31,7 @@ const SignupComponent = () => {
     }
   };
   return (
-    <div id='signup-component-container'>
+    <div id={id}>
       <form onSubmit={handleSubmit}>
         {/* First Name input */}
         <label>First Name: </label>

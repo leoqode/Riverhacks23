@@ -2,13 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import LoginComponent from './components/LoginComponent.jsx'
-import SignupComponent from './components/SignupComponent.jsx'
+import LandingPage from './components/LandingPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div>
-    <LoginComponent/>
-    <SignupComponent/>
+    <LandingPage/>
   </div>
 
 )
