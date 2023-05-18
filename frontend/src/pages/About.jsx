@@ -1,7 +1,9 @@
+import LandingPage from '../components/LandingPage.jsx'
+
 function About() {
   return (
     <>
-    About
+    <LandingPage/>
     </>
   )
 }
