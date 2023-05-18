@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
       if(result) {
         req.session.userId = user.userId;
 
-        const retUser = await db.users.findByPk(req.session.userId)
+        const retUser = await db.userPub.findByPk(req.session.userId)
 
         return res.json({user: retUser});
       } else {
