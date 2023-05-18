@@ -23,8 +23,13 @@ sequelize.sync({force: config.DEV});
 
 db.userPub = require('./userPub')(sequelize, Sequelize);
 db.userAuth = require('./userAuth')(sequelize, Sequelize);
+db.tasks = require('./Task')(sequelize, Sequelize);
 
 // Users authentication
 db.userPub.hasOne(db.userAuth);
+
+// Users owning tasks
+db.userPub.hasMany(db.tasks);
+db.tasks.belongsTo(db.userPub);
 
 module.exports = db;
