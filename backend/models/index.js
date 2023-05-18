@@ -19,5 +19,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.users = require('./userPub')(sequelize, Sequelize);
+sequelize.sync({force: config.DEV});
+
+db.userPub = require('./userPub')(sequelize, Sequelize);
 db.userAuth = require('./userAuth')(sequelize, Sequelize);
+
+// Users authentication
+db.users.hasOne(db.userAuth);
