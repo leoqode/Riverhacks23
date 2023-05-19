@@ -33,6 +33,7 @@ const SignupComponent = ({ id, setUser }) => {
     }
   };
   return (
+    <div className="border">
     <div id={id}>
       <form onSubmit={handleSubmit}>
         {/* First Name input */}
@@ -70,6 +71,7 @@ const SignupComponent = ({ id, setUser }) => {
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };
