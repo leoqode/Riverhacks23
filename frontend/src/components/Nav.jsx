@@ -7,15 +7,16 @@ export default function Nav() {
   const [showMobile, setShowMobile] = useState(false);
 
   return (
-    <nav style={{fontFamily:'Jost', height:'100px', backgroundColor:' #3aadaa'}} className='text-zinc-50 select-none'>
+    <nav style={{zIndex:'999',display:'flex', flexDirection:'column', fontFamily:'Jost', height:'130px', backgroundColor:' #3aadaa'}} className='text-zinc-50 select-none'>
       <div style={{}} className='mx-auto mr-4'>
-        <div className='flex justify-between items-center'>
+        <div style={{ display:'flex', flexDirection:'column'}} className='flex justify-between items-center'>
           <header>
             <title>mindfulU</title>
             <img className="logo"
               src={logo}
               alt='a gorgeous logo'
-              style={{  display: 'block',
+              style={{  display: 'flex',
+              flexDirection:'column',
                 maxWidth:'230px',
                 maxHeight:'95px',
                 width: 'auto',
@@ -23,16 +24,16 @@ export default function Nav() {
             />
           </header>
           {/* Nav Links */}
-          <div className='flex space-x-4'>
+          <div style={{display:'flex', flexDirection:'column'}}>
             {/* primary */}
             <div className='hidden md:flex space-x-4 items-center'>
-              <Link className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/game'>
+              <Link style={{color:'black'}} className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/game'>
                 Game
               </Link>
-              <Link className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/user'>
+              <Link style={{color:'black'}} className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/user'>
                 Profile
               </Link>
-              <Link className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/mindful'>
+              <Link style={{color:'black'}} className='pt-1.5 pb-2.5 hover:text-zinc-300' to='/mindful'>
                 Social
               </Link>
             </div>
