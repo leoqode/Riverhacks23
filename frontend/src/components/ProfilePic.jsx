@@ -1,11 +1,11 @@
 import React from 'react';
 import './ProfilePic.css';
 
-const ProfilePic = ({image}) => {
+const ProfilePic = ({avatar}) => {
     return (
         <div className="picHolder">
             <div className="frame">
-                <img src={image}/>
+                <img src={avatar}/>
             </div>
         </div>
     );

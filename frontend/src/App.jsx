@@ -24,7 +24,7 @@ function App() {
           <Route element={<NavRoute/>} >
             {/* routes with nav here */}
 
-            <Route element={<ProtectedRoute authed={!!user} redirectPath='/about'/>}>
+            <Route element={<ProtectedRoute authed={true} redirectPath='/about'/>}>
 
               <Route
                 path='/game'
