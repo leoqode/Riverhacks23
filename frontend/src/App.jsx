@@ -20,12 +20,12 @@ function App() {
                 path='/about'
                 element={<About setUser={(user) => {setUser(user);navigate('/game')}}/>}
                 />
-          
+
           <Route element={<NavRoute/>} >
             {/* routes with nav here */}
 
             <Route element={<ProtectedRoute authed={!!user} redirectPath='/about'/>}>
-              
+
               <Route
                 path='/game'
                 element={<Game/>}
@@ -40,18 +40,17 @@ function App() {
                 path='/mindful'
                 element={<Social/>}
                 />
-              
+
             </Route>
 
           </Route>
 
-          <Route path='*' element={<Navigate to='/about' replace/>}/>
+          <Route path='' element={<Navigate to='/about' replace/>}/>
 
         </Routes>
 
-      
     </div>
   )
 }
 
-export default App
+export default App;
