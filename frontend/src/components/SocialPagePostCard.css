@@ -1,4 +1,5 @@
-
-.social-page-post-card-container {
-  position: relative;
+.social-delete-button{
+  display: inline;
+  justify-content: flex-end;
 }
+

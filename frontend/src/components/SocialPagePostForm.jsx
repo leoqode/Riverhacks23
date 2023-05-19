@@ -52,15 +52,18 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
         Create Post
       </Button>
 
-      <Modal show={isOpen} onHide={closeModal} size="lg" centered>
+      <Modal show={isOpen} onHide={closeModal} size="lg" centered style={{color: 'green'}}>
         <Modal.Header closeButton>
         <Form.Group controlId="input-social-form-subject">
               <Form.Label>Subject</Form.Label>
               <Form.Control
+                size="sm"
                 as="textarea"
                 placeholder="Enter your subject text..."
                 value={subjectText}
                 onChange={handleInputChangeSubject}
+                style={{ resize: "none" , width: '200px', height: '50px'}}
+                
               />
             </Form.Group>
         </Modal.Header>
@@ -79,8 +82,8 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
 
             <Form.Group controlId="input-social-form-mood">
               <Form.Label>Mood</Form.Label>
-              <Dropdown onSelect={handleMoodSelect}>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <Dropdown  onSelect={handleMoodSelect}>
+                <Dropdown.Toggle style={{backgroundColor:'green'}} variant="success" id="dropdown-basic">
                   {selectedMood ? (
                     <>
                       You are feeling <strong>{selectedMood}</strong>
@@ -99,10 +102,10 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Button style={{color:'white', backgroundColor:'green', borderColor:'black'}} variant="primary" type="submit" onClick={handleSubmit}>
             Submit
           </Button>
-          <Button variant="secondary" onClick={closeModal}>
+          <Button style={{color:'black'}} variant="secondary" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>
