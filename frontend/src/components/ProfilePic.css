@@ -1,0 +1,21 @@
+.picHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+  
+.frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+  
+.frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
