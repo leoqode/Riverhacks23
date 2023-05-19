@@ -6,8 +6,8 @@ import SocialPagePostButton from "./SocialPagePostButton";
 const SocialPage = () => {
   return (
     <div>
-      <SocialPagePostButton/>
-      <SocialPagePostCard />
+      <SocialPagePostButton />
+      <SocialPagePostCard/>
       <div>Progress</div>
     </div>
   );

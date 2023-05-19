@@ -6,6 +6,8 @@ import Social from "./pages/Social";
 import NavRoute from "./components/NavRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 
+
+
 function App() {
   return (
     <div className='App w-full h-full'>
