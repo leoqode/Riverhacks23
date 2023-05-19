@@ -1,21 +1,23 @@
-#signup-component-container{
-display: none;
-}
-#signup-extended-container{
-  height: 100px;
-  width: 100px;
-  display: flex;
-  flex-direction: column;
+#signup-component-container {
+  display: none;
+  height: 400px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Allow vertical overflow */
 }
 
-.border{
+#signup-extended-container {
+  height: 100px;
+  width: 100px;
+
+
+}
+
+
+
+.button {
+  border: 10px;
   background-color: #a2d5ac;
   margin-top: 5px;
   margin-left: 5%;
   margin-right: 5%;
-  /* border-radius: 5%; */
 }
 
-.button{
-  border: 10px;
-}

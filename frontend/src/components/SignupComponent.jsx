@@ -24,7 +24,14 @@ const SignupComponent = ({ id, setUser }) => {
     event.preventDefault();
 
     if (isValidEmail) {
-      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value}).then((data) => {setUser(data.data.user)})
+      connection
+        .post("/auth/signup", {
+          email: event.target.email.value,
+          password: event.target.password.value,
+        })
+        .then((data) => {
+          setUser(data.data.user);
+        });
       // Perform form submission or other actions
       console.log("Form submitted successfully");
     } else {
@@ -32,47 +39,48 @@ const SignupComponent = ({ id, setUser }) => {
       setEmail("");
     }
   };
+
   return (
     <div className="border">
-    <div id={id}>
-      <form onSubmit={handleSubmit}>
-        {/* First Name input */}
-        <label style={{fontFamily:'Jost'}} >First Name: </label>
-        <input style={{fontFamily:'Jost'}} type='text' placeholder='Johnny' />
+      <div id={id} className="signup-component-container">
+        <form style={{display:'flex', flexDirection:'column'}} onSubmit={handleSubmit}>
+          {/* First Name input */}
+          <label style={{ fontFamily: "Jost" }}>First Name: </label>
+          <input style={{ fontFamily: "Jost" }} type="text" placeholder="Johnny" />
 
-        {/* Last Name input */}
-        <label style={{fontFamily:'Jost'}}>Last Name: </label>
-        <input style={{fontFamily:'Jost'}} type='text' placeholder='Appleseed' />
+          {/* Last Name input */}
+          <label style={{ fontFamily: "Jost" }}>Last Name: </label>
+          <input style={{ fontFamily: "Jost" }} type="text" placeholder="Appleseed" />
 
-        {/* ACC Email input */}
-        <label style={{fontFamily:'Jost'}} >ACC Email: </label>
-        <input
-        style={{fontFamily:'Jost'}}
-          id='acc_email_signup'
-          type='text'
-          name="email"
-          placeholder='@g.austincc.edu'
-          value={email}
-          onChange={handleEmailChange}
-          className={!isValidEmail ? "invalid-email" : ""}
-        />
-        {/* Display error message if email is invalid */}
-        {!isValidEmail && (
-          <p style={{fontFamily:'Jost'}} className='error-message'>
-            Invalid email domain. Please enter a valid ACC email.
-          </p>
-        )}
+          {/* ACC Email input */}
+          <label style={{ fontFamily: "Jost" }}>ACC Email: </label>
+          <input
+            style={{ fontFamily: "Jost" }}
+            id="acc_email_signup"
+            type="text"
+            name="email"
+            placeholder="@g.austincc.edu"
+            value={email}
+            onChange={handleEmailChange}
+            className={!isValidEmail ? "invalid-email" : ""}
+          />
+          {/* Display error message if email is invalid */}
+          {!isValidEmail && (
+            <p style={{ fontFamily: "Jost" }} className="error-message">
+              Invalid email domain. Please enter a valid ACC email.
+            </p>
+          )}
 
-        {/* Set Password input */}
-        <label style={{fontFamily:'Jost'}} >Set Password</label>
-        <input type='password' name="password" />
+          {/* Set Password input */}
+          <label style={{ fontFamily: "Jost" }}>Set Password</label>
+          <input type="password" name="password" />
 
-        {/* Sign Up button */}
-        <button style={{fontFamily:'Jost'}} onSubmit={handleSubmit} type='submit'>
-          Sign Up
-        </button>
-      </form>
-    </div>
+          {/* Sign Up button */}
+          <button style={{ fontFamily: "Jost" }} type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
