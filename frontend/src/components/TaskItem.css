@@ -1,33 +1,38 @@
 .task-item {
   display: flex;
-  /* justify-content: space-between; */
-  align-items: left;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: flex-start; */
   padding: 10px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   margin-left: 30%;
   margin-right: 30%;
-  background-color: #fff;
+  background-color: #fff; /* make it so that the background color matches that of the respective category*/
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .point {
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
-  object-fit: cover;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
 /* implement later */
 .task-item:hover {
-  background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 
-.task-weight{
-    align-content: right;
+.point img{
+    margin-left: 5px;
+    width: 20px;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
 }
 
-
+.task-rewards{
+    display: flex;
+    justify-content: flex-end;
+}
 
