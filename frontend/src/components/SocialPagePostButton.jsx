@@ -1,7 +1,7 @@
 import SocialPagePostForm from "./SocialPagePostForm";
 import React from "react";
 import Button from "react-bootstrap/Button";
-import image from "../assets/tree_image_banner_top_social_page.jpeg";
+import image from "../assets/tree_image_banner_top_social_page.png";
 import { useState } from "react";
 
 const SocialPagePostButton = ({ onPostSubmit }) => {
@@ -10,7 +10,7 @@ const SocialPagePostButton = ({ onPostSubmit }) => {
   };
 
   return (
-    <div
+    <div className="backTrees"
       style={{
         backgroundImage: `url(${image})`,
         backgroundRepeat: "repeat-x",
