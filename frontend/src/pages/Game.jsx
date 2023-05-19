@@ -14,10 +14,13 @@ function Game() {
   return (
     <>
     <HealthDimensions />
-    {/* {tasks.map((task) => (
-      <TaskItem key={task.id} task={task} onToggle={handleToggle} />
-    ))} */}
-    
+    {Object.values(tasks).flatMap((dimensionTasks) =>
+        dimensionTasks.map((task) => (
+          <TaskItem key={task.title} task={task} onToggle={handleToggle} />
+        ))
+      )}
+
+
     </>
     
   )
