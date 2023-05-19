@@ -1,23 +1,18 @@
-import TaskItem from "../components/TaskItem.jsx";
 import React from "react";
-import sampleTasks from "../json/sampleTasks.json";
+import "./TaskItem.css";
 
-function Game() {
-  
-  const tasks = sampleTasks;
-  
-  const handleToggle = (taskId) => {
-    console.log("Task toggled:", taskId);
-  };
-
-  return (
-    <>
-    Game
-    {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} onToggle={handleToggle} />
-      ))}
-    </>
-  )
+const TaskItem = ({task, onToggle}) => {
+    return (
+        <div className="task-item">
+        <h3>{task.title}</h3>
+        <p>{task.weight}</p>
+        <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={() => onToggle(task.id)}
+        />
+        </div>
+    );
 }
 
-export default Game;
+export default TaskItem;

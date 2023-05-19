@@ -14,8 +14,8 @@ function Game() {
     <>
     Game
     {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} onToggle={handleToggle} />
-      ))}
+      <TaskItem key={task.id} task={task} onToggle={handleToggle} />
+    ))}
     </>
   )
 }
