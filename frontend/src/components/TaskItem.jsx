@@ -11,7 +11,7 @@ const TaskItem = ({task, onToggle}) => {
             checked={task.completed}
             onChange={() => onToggle(task.id)}
         />
-        <div>{task.weight}<img class="point" src={droplet} alt="droplet" /></div>
+        {task.weight}<img className="point" src={droplet} alt="droplet"/>
         </div>
     );
 }

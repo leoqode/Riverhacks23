@@ -4,9 +4,16 @@
 #d2fdb8 = intellectual
 #cae2fc = social
 */
+
+.dimensions{
+    justify-content: center;
+}
+
 .physical-btn{
     background-color: #c5ffff;
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .physical-btn:hover{
@@ -18,6 +25,8 @@
 .spiritual-btn{
     background-color: #fad4b0;
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .spiritual-btn:hover{
@@ -29,6 +38,8 @@
 .emotional-btn{
     background-color: #fbb6af;
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .emotional-btn:hover{
@@ -40,6 +51,8 @@
 .intellectual-btn{
     background-color: #d2fdb8;
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .intellectual-btn:hover{
@@ -51,6 +64,8 @@
 .social-btn{
     background-color: #cae2fc;
     color: black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .social-btn:hover{

@@ -2,6 +2,7 @@ import TaskItem from "../components/TaskItem.jsx";
 import React from "react";
 import sampleTasks from "../json/sampleTasks.json";
 import HealthDimensions from "../components/HealthDimensions.jsx";
+import SaplingView from "../components/SaplingView.jsx";
 
 function Game() {
   
@@ -13,12 +14,13 @@ function Game() {
 
   return (
     <>
-    <HealthDimensions />
+    <SaplingView/>
+    <HealthDimensions/>
     {Object.values(tasks).flatMap((dimensionTasks) =>
         dimensionTasks.map((task) => (
-          <TaskItem key={task.title} task={task} onToggle={handleToggle} />
+          <TaskItem key={task.title} task={task} onToggle={handleToggle}/>
         ))
-      )}
+    )}
 
 
     </>
