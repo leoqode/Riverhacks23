@@ -22,7 +22,7 @@ const LoginComponent = ({id, setUser}) => {
         <input style={{fontFamily:'Jost'}} type='password' name="password" placeholder='password' />
         {/* Sign Up button */}
         <button style={{fontFamily:'Jost'}} onSubmit={handleSubmit} type='submit'>
-          Sign Up
+          Log In
         </button>
       </form>
     </div>
