@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 import { useState } from "react";
-import logo from "../assets/mindfulU_logo.jpeg";
+import logo from "../assets/mindfulU_logo.jpg";
 
 export default function Nav() {
   const [showMobile, setShowMobile] = useState(false);
