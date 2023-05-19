@@ -11,7 +11,7 @@ export default function Nav() {
       <div className='mx-auto mr-4'>
         <div className='flex justify-between items-center'>
           <header>
-            <title>Your Page Title</title>
+            <title>mindfulU</title>
             <img
               src={logo}
               alt='a gorgeous logo'
