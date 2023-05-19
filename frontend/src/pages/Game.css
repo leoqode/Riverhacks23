@@ -1,0 +1,24 @@
+.no-btn{
+  background-color: #fbb6af;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.yes-btn{
+  background-color: #c5ffff;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modall{
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -200px;
+  background-color: white;
+  padding: 10px;
+}

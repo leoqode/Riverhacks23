@@ -1,0 +1,9 @@
+#signup-component-container{
+display: none;
+}
+#signup-extended-container{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}

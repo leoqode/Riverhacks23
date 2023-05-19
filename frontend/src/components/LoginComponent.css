@@ -1,0 +1,9 @@
+#login-component-container{
+display: none;
+}
+#login-component-extended{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}
