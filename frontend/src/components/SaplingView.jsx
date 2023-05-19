@@ -1,6 +1,8 @@
 import React from 'react';
 import './SaplingView.css';
 
+import connection from "../api/connection.js";
+
 // import staticImage from '../assets/static-image.png';
 // import animatedImage from '../assets/animated-image.gif';
 
@@ -15,10 +17,28 @@ import sapling8 from '../assets/sapling8.png';
 import sapling9 from '../assets/sapling9.png';
 import platform from '../assets/platform.png';
 
+const stage1 = [sapling1, sapling2, sapling3];
+const stage2 = [sapling4, sapling5];
+const stage3 = [sapling6, sapling7];
+const stage4 = [sapling8, sapling9];
 
-const saplingImages = [sapling1, sapling2, sapling3, sapling4, sapling5, sapling6, sapling7, sapling8, sapling9]
+// get user score here
+const userScore = connection.get("/api/users/score").then((res) => {console.log(res.data)});
+
+let saplingImages = [];
 
 const SaplingView = () => {
+
+    if(userScore < 4){
+      saplingImages = stage1;
+    } else if(userScore > 3 && userScore < 7){
+      saplingImages = stage2;
+    } else if(userScore > 6 && userScore < 10){
+      saplingImages = stage3;
+    } else{
+      saplingImages = stage4;
+    }
+
 
     const getRandomSaplingImage = () => {
         const randomIndex = Math.floor(Math.random() * saplingImages.length);
@@ -28,7 +48,7 @@ const SaplingView = () => {
     return (
         <div className="overlay-container">
         <img src={platform} alt="platform" className="platform"/>
-        {/* <img src={sapling1} alt="sapling1" className="sapling1"/> */}
+        
         {saplingImages.map((sapling, index) => (
         <img key={index} src={getRandomSaplingImage()} alt={'sapling${index}'} className="sapling"/>
       ))}
