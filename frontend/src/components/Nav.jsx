@@ -12,7 +12,7 @@ export default function Nav() {
         <div className='flex justify-between items-center'>
           <header>
             <title>mindfulU</title>
-            <img
+            <img className="logo"
               src={logo}
               alt='a gorgeous logo'
               style={{  display: 'block',
