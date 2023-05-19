@@ -1,17 +1,21 @@
 module.exports = (sequelize, Sequelize) => {
   
-  const Task = sequelize.define('task', {
+  const Post = sequelize.define('post', {
     
     title: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    picture: {
+    body: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    mood: {
       type: Sequelize.STRING,
       allowNull: false
     }
 
   });  
   
-  return Task;
+  return Post;
 };

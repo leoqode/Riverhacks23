@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // CORS
-app.use(cors());
+app.use(cors({origin: 'http://localhost:5173', credentials: true,}));
 
 // Session
 app.use(session({
