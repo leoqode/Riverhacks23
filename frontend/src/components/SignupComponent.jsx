@@ -24,7 +24,7 @@ const SignupComponent = ({ id, setUser }) => {
     event.preventDefault();
 
     if (isValidEmail) {
-      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value})
+      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value}).then((data) => {setUser(data.data.user)})
       // Perform form submission or other actions
       console.log("Form submitted successfully");
     } else {

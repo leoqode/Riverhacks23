@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import About from './pages/About'
 import Game from './pages/Game'
@@ -9,16 +9,16 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="App w-full h-full">
 
-      <BrowserRouter>
 
         <Routes>
           <Route
                 path='/about'
-                element={<About setUser={(user) => {setUser(user)}}/>}
+                element={<About setUser={(user) => {setUser(user);navigate('/game')}}/>}
                 />
           
           <Route element={<NavRoute/>} >
@@ -49,7 +49,6 @@ function App() {
 
         </Routes>
 
-      </BrowserRouter>
       
     </div>
   )
