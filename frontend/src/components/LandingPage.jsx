@@ -35,11 +35,11 @@ const LandingPage = ({ setUser }) => {
         
         <div className="websiteInfo" >
           <div className="websiteLogo">
-            <img style={{ height: '100px', width:'100px'}} src={logo} alt='a gorgeous logo'/>
+            <img style={{ height: '300px', width:'280px'}} src={logo} alt='a gorgeous logo'/>
           </div>
         </div>
       </header>
-      <div style={{backgroundColor:'black', height:'100px'}} className="loginContents">
+      <div style={{backgroundColor:'#3aadaa', height:'100px'}} className="loginContents">
         <div
         style={{fontFamily:'Jost',color:'white'}}>Taking care of yourself is an essential part of your college experience, and we're here to support you every step of the way!</div>
         <br></br>
@@ -57,7 +57,7 @@ const LandingPage = ({ setUser }) => {
       </div>
 
       <footer>
-        <a style={{fontFamily:'Jost'}} href="mailto:webmaster@example.com"> Contact us!</a>
+        <a style={{fontFamily:'Jost', color:'white'}} href="mailto:webmaster@example.com"> Contact us!</a>
       </footer>
     </div>
   );
