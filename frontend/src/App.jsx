@@ -7,8 +7,6 @@ import NavRoute from "./components/NavRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 
-Modal.setAppElement('#root');
-
 function App() {
   return (
     <div className="App w-full h-full">

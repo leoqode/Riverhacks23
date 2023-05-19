@@ -1,6 +1,5 @@
 // SocialPagePostForm.js
-
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -14,7 +13,17 @@ const customStyles = {
   },
 };
 
-const SocialPagePostForm = ({ isOpen, onRequestClose, username, bodyPrompt, mood }) => {
+const SocialPagePostForm = ({ isOpen, onRequestClose, onPostSubmit, username, bodyPrompt, mood }) => {
+  const [postText, setPostText] = useState("");
+
+  const handleInputChange = (event) => {
+    setPostText(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    console.log('Form Submited')
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -29,9 +38,10 @@ const SocialPagePostForm = ({ isOpen, onRequestClose, username, bodyPrompt, mood
         <h3>{username} is feeling {mood}</h3>
       </div>
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>{bodyPrompt}</label>
-          <input type='text' placeholder='...' />
+          <input type='text' placeholder='...' value={postText} onChange={handleInputChange} />
+          <button type="submit">Submit</button>
         </form>
       </div>
       <button onClick={onRequestClose}>close</button>
