@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './SaplingView.css';
 
 import connection from "../api/connection.js";
@@ -29,31 +29,44 @@ const userScore = connection.get("/users/score").then((res) => {console.log(res.
 let saplingImages = [];
 
 const SaplingView = () => {
+  useEffect(() => {
+    const fetchUserScore = async () => {
+      const response = await connection.get("/users/score");
+      setUserScore(response.data);
+    };
 
-    if(userScore < 4){
+    const timeout = setTimeout(() => {
+      fetchUserScore();
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (userScore === null) return;
+
+    if (userScore < 4) {
       saplingImages = stage1;
-    } else if(userScore > 3 && userScore < 7){
+    } else if (userScore > 3 && userScore < 7) {
       saplingImages = stage2;
-    } else if(userScore > 6 && userScore < 10){
+    } else if (userScore > 6 && userScore < 10) {
       saplingImages = stage3;
-    } else{
+    } else {
       saplingImages = stage4;
     }
+  }, [userScore]);
 
+  const getRandomSaplingImage = () => {
+      const randomIndex = Math.floor(Math.random() * saplingImages.length);
+      return saplingImages[randomIndex];
+    };
 
-    const getRandomSaplingImage = () => {
-        const randomIndex = Math.floor(Math.random() * saplingImages.length);
-        return saplingImages[randomIndex];
-      };
-
-    return (
-        <div className="overlay-container">
+  return (
+    <div className="overlay-container">
         <img src={platform} alt="platform" className="platform"/>
-
         {saplingImages.map((sapling, index) => (
-        <img key={index} src={getRandomSaplingImage()} alt={'sapling${index}'} className="sapling"/>
-      ))}
-        </div>
+        <img key={index} src={getRandomSaplingImage()} alt={'sapling${index}'} className="sapling"/>))}
+      </div>
     );
 };
 

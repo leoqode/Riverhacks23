@@ -9,6 +9,16 @@
         "title": "Exercise for thirty minutes or more.",
         "weight": 1,
         "completed": false
+    }, 
+    {
+        "title": "Eat a healthy breakfast.",
+        "weight": 1,
+        "completed": false
+    },
+    {
+        "title": "Go on a jog.",
+        "weight": 1,
+        "completed": false
     }
   ],
   "Emotional": [
