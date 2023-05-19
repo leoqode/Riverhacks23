@@ -3,3 +3,61 @@
 #fbb6af = emotional
 #d2fdb8 = intellectual
 #cae2fc = social
+*/
+.physical-btn{
+    background-color: #c5ffff;
+    color: black;
+}
+
+.physical-btn:hover{
+    background-color: #c5ffff;
+    color: black;
+    border-color: #c5ffff;
+}
+
+.spiritual-btn{
+    background-color: #fad4b0;
+    color: black;
+}
+
+.spiritual-btn:hover{
+    background-color: #fad4b0;
+    color: black;
+    border-color: #fad4b0;
+}
+
+.emotional-btn{
+    background-color: #fbb6af;
+    color: black;
+}
+
+.emotional-btn:hover{
+    background-color: #fbb6af;
+    color: black;
+    border-color: #fbb6af;
+}
+
+.intellectual-btn{
+    background-color: #d2fdb8;
+    color: black;
+}
+
+.intellectual-btn:hover{
+    background-color: #d2fdb8;
+    color: black;
+    border-color: #d2fdb8;
+}
+
+.social-btn{
+    background-color: #cae2fc;
+    color: black;
+}
+
+.social-btn:hover{
+    background-color: #cae2fc;
+    color: black;
+    border-color: #cae2fc;
+}
+  
+  /* Add more custom classes for other buttons if needed */
+  
