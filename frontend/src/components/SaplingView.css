@@ -7,37 +7,41 @@
 
 .overlay-container{
     position: relative;
-    justify-items: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
 }
 
 .platform{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 200px;
+    height: 200px;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
 }
   
-.sapling1{
+.sapling{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
+    top: 60px;
+    width: 200px;
+    height: 200px;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
     -webkit-filter: drop-shadow(8px 8px 8px #222);
     filter: drop-shadow(8px 8px 8px #222);
-    /* animation: overlayAnimation 5s infinite; */
+    animation: saplingAnimation 5s infinite;
 }
   
-  /* @keyframes overlayAnimation {
+@keyframes saplingAnimation {
     0% {
       opacity: 0;
     }
@@ -47,4 +51,4 @@
     100% {
       opacity: 0;
     }
-  } */
+  }
