@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import connection from "../api/connection";
 
 import "./SignupComponent.css";
 
-const SignupComponent = ({ id }) => {
+const SignupComponent = ({ id, setUser }) => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
 
@@ -23,6 +24,7 @@ const SignupComponent = ({ id }) => {
     event.preventDefault();
 
     if (isValidEmail) {
+      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value}).then((data) => {setUser(data.data.user)})
       // Perform form submission or other actions
       console.log("Form submitted successfully");
     } else {
@@ -31,6 +33,7 @@ const SignupComponent = ({ id }) => {
     }
   };
   return (
+    <div className="border">
     <div id={id}>
       <form onSubmit={handleSubmit}>
         {/* First Name input */}
@@ -46,6 +49,7 @@ const SignupComponent = ({ id }) => {
         <input
           id='acc_email_signup'
           type='text'
+          name="email"
           placeholder='@g.austincc.edu'
           value={email}
           onChange={handleEmailChange}
@@ -60,13 +64,14 @@ const SignupComponent = ({ id }) => {
 
         {/* Set Password input */}
         <label>Set Password</label>
-        <input type='password' />
+        <input type='password' name="password" />
 
         {/* Sign Up button */}
         <button onSubmit={handleSubmit} type='submit'>
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };

@@ -1,0 +1,91 @@
+/*Button colors: #c5ffff = physical
+#fad4b0 = spiritual
+#fbb6af = emotional
+#d2fdb8 = intellectual
+#cae2fc = social
+*/
+
+.dimensions{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.physical-btn{
+    background-color: #c5ffff;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.physical-btn:hover{
+    background-color: #c5ffff;
+    color: black;
+    border-color: #c5ffff;
+}
+
+.spiritual-btn{
+    background-color: #fad4b0;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.spiritual-btn:hover{
+    background-color: #fad4b0;
+    color: black;
+    border-color: #fad4b0;
+}
+
+.emotional-btn{
+    background-color: #fbb6af;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.emotional-btn:hover{
+    background-color: #fbb6af;
+    color: black;
+    border-color: #fbb6af;
+}
+
+.intellectual-btn{
+    background-color: #d2fdb8;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.intellectual-btn:hover{
+    background-color: #d2fdb8;
+    color: black;
+    border-color: #d2fdb8;
+}
+
+.social-btn{
+    background-color: #cae2fc;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover{
+    background-color: #cae2fc;
+    color: black;
+    border-color: #cae2fc;
+}
+  
+  /* Add more custom classes for other buttons if needed */
+  
