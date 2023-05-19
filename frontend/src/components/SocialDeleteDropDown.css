@@ -1,0 +1,7 @@
+#social-delete-dropdown.true{
+  height: 100px;
+  width: 100px;
+}
+#social-delete-dropdown.false{
+  display: none;
+}
