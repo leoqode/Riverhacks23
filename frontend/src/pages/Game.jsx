@@ -1,6 +1,7 @@
 import TaskItem from "../components/TaskItem.jsx";
 import React from "react";
 import sampleTasks from "../json/sampleTasks.json";
+import HealthDimensions from "../components/HealthDimensions.jsx";
 
 function Game() {
   
@@ -12,11 +13,13 @@ function Game() {
 
   return (
     <>
-    Game
-    {tasks.map((task) => (
+    <HealthDimensions />
+    {/* {tasks.map((task) => (
       <TaskItem key={task.id} task={task} onToggle={handleToggle} />
-    ))}
+    ))} */}
+    
     </>
+    
   )
 }
 
