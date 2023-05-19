@@ -59,7 +59,7 @@ const SaplingView = () => {
   const getRandomSaplingImage = () => {
       const randomIndex = Math.floor(Math.random() * saplingImages.length);
       return saplingImages[randomIndex];
-    };
+  };
 
   return (
     <div className="overlay-container">
