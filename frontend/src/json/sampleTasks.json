@@ -1,12 +1,22 @@
 {
   "Physical": [
     {
-        "title": "Drink a cup of water.",
+        "title": "Drink at least a cup of water.",
         "weight": 1,
         "completed": false
     },
     {
         "title": "Exercise for thirty minutes or more.",
+        "weight": 1,
+        "completed": false
+    }, 
+    {
+        "title": "Eat a healthy breakfast.",
+        "weight": 1,
+        "completed": false
+    },
+    {
+        "title": "Go on a jog.",
         "weight": 1,
         "completed": false
     }

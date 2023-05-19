@@ -24,7 +24,7 @@ const SignupComponent = ({ id, setUser }) => {
     event.preventDefault();
 
     if (isValidEmail) {
-      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value})
+      connection.post("/auth/signup", { email: event.target.email.value, password: event.target.password.value}).then((data) => {setUser(data.data.user)})
       // Perform form submission or other actions
       console.log("Form submitted successfully");
     } else {
@@ -33,19 +33,21 @@ const SignupComponent = ({ id, setUser }) => {
     }
   };
   return (
+    <div className="border">
     <div id={id}>
       <form onSubmit={handleSubmit}>
         {/* First Name input */}
-        <label>First Name: </label>
-        <input type='text' placeholder='Johnny' />
+        <label style={{fontFamily:'Jost'}} >First Name: </label>
+        <input style={{fontFamily:'Jost'}} type='text' placeholder='Johnny' />
 
         {/* Last Name input */}
-        <label>Last Name: </label>
-        <input type='text' placeholder='Appleseed' />
+        <label style={{fontFamily:'Jost'}}>Last Name: </label>
+        <input style={{fontFamily:'Jost'}} type='text' placeholder='Appleseed' />
 
         {/* ACC Email input */}
-        <label>ACC Email: </label>
+        <label style={{fontFamily:'Jost'}} >ACC Email: </label>
         <input
+        style={{fontFamily:'Jost'}}
           id='acc_email_signup'
           type='text'
           name="email"
@@ -56,20 +58,21 @@ const SignupComponent = ({ id, setUser }) => {
         />
         {/* Display error message if email is invalid */}
         {!isValidEmail && (
-          <p className='error-message'>
+          <p style={{fontFamily:'Jost'}} className='error-message'>
             Invalid email domain. Please enter a valid ACC email.
           </p>
         )}
 
         {/* Set Password input */}
-        <label>Set Password</label>
+        <label style={{fontFamily:'Jost'}} >Set Password</label>
         <input type='password' name="password" />
 
         {/* Sign Up button */}
-        <button onSubmit={handleSubmit} type='submit'>
+        <button style={{fontFamily:'Jost'}} onSubmit={handleSubmit} type='submit'>
           Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };

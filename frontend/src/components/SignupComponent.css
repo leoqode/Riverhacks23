@@ -7,3 +7,15 @@ display: none;
   display: flex;
   flex-direction: column;
 }
+
+.border{
+  background-color: #3aadaa;
+  margin-top: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* border-radius: 5%; */
+}
+
+.button{
+  border: 10px;
+}

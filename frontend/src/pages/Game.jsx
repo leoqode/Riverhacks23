@@ -1,13 +1,13 @@
 import TaskItem from "../components/TaskItem.jsx";
-import React from "react";
 import { useState } from "react";
 import sampleTasks from "../json/sampleTasks.json";
 import HealthDimensions from "../components/HealthDimensions.jsx";
 import SaplingView from "../components/SaplingView.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Game.css';
+import connection from "../api/connection.js";
 
-function Game() {
+function Game({font}) {
   
   const [dimension, setDimension] = useState("Physical");
   const [activeTask, setActiveTask] = useState(null);
@@ -21,11 +21,13 @@ function Game() {
   const handleToggle = (task) => {
     setActiveTask(task)
     // TODO link to api create task 
+    connection.post("/tasks/create", { title: task.title, points: task.weight, catagory: "misc"}).then((res) => {console.log(res.data)})
   };
 
   const handlePost = (task) => {
     console.log("Task posted:", task);
     // TODO link to api create post
+    connection.post("/posts/create", { title: task.title, body: task.weight, mood: "Happy"}).then((res) => {console.log(res.data)})
     setActiveTask(null)
   }
 
@@ -36,16 +38,16 @@ function Game() {
 
   return (
     <>
-    <SaplingView/>
-    <HealthDimensions handleChange={handleChangeDimensions}/>
+    <SaplingView />
+    <HealthDimensions font={font} handleChange={handleChangeDimensions}/>
     {sampleTasks[dimension].map((task) => (
-        <TaskItem key={task.title} task={task} onToggle={handleToggle}/>
+        <TaskItem font={font} key={task.title} task={task} onToggle={handleToggle}/>
       ))}
     {activeTask ?
-        <div className="modall">
+        <div style={{fontFamily:'Jost'}} className="modall">
         Do you want to publicly post this?  
-        <button className="yes-btn btn" onClick={() => handlePost(activeTask)}>Yes</button>
-        <button className="no-btn btn" onClick={() => handleMakeTask(activeTask)}>No</button>
+        <button style={{fontFamily:'Jost'}} className="yes-btn btn" onClick={() => handlePost(activeTask)}>Yes</button>
+        <button style={{fontFamily:'Jost'}} className="no-btn btn" onClick={() => handleMakeTask(activeTask)}>No</button>
       </div> : null
   }
 
