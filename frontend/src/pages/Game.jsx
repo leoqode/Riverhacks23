@@ -1,11 +1,11 @@
 import TaskItem from "../components/TaskItem.jsx";
-import React from "react";
 import { useState } from "react";
 import sampleTasks from "../json/sampleTasks.json";
 import HealthDimensions from "../components/HealthDimensions.jsx";
 import SaplingView from "../components/SaplingView.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Game.css';
+import connection from "../api/connection.js";
 
 function Game() {
   
@@ -21,11 +21,13 @@ function Game() {
   const handleToggle = (task) => {
     setActiveTask(task)
     // TODO link to api create task 
+    connection.post("/tasks/create", { title: task.title, points: task.weight, catagory: "misc"}).then((res) => {console.log(res.data)})
   };
 
   const handlePost = (task) => {
     console.log("Task posted:", task);
     // TODO link to api create post
+    connection.post("/posts/create", { title: task.title, body: task.weight, mood: "Happy"}).then((res) => {console.log(res.data)})
     setActiveTask(null)
   }
 
