@@ -14,8 +14,8 @@ const LoginComponent = ({id, setUser}) => {
   };
 
   return (
-    <div id={id} >
-      <form onSubmit={handleSubmit}>
+    <div  id={id} >
+      <form style={{backgroundColor:'white', height:'100px',width:'100px'}} onSubmit={handleSubmit}>
         <label style={{fontFamily:'Jost'}}>ACC Email: </label>
         <input style={{fontFamily:'Jost'}} type='text' name="email" placeholder='g.austincc.edu' />
         <label style={{fontFamily:'Jost'}}>Password: </label>

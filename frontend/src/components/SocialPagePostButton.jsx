@@ -12,10 +12,13 @@ const SocialPagePostButton = ({ onPostSubmit }) => {
   return (
     <div className="backTrees"
       style={{
+        border:'1px solid black',
         backgroundImage: `url(${image})`,
         backgroundRepeat: "repeat-x",
-        backgroundSize: "auto",
-        backgroundPosition: "center",
+        backgroundSize: "128px",
+        backgroundPosition: "top",
+        borderBottom:'100px',
+        borderColor:'black',
       }}
     >
       <div

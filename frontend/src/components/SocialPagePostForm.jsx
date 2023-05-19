@@ -48,7 +48,7 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
 
   return (
     <>
-      <Button style={{fontFamily:'Jost'}} onClick={openModal} variant="success" className="bg-success">
+      <Button style={{borderRadius:'0px', fontFamily:'Jost'}} onClick={openModal} variant="success" className="bg-success">
         Create Post
       </Button>
 
