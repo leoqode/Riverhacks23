@@ -17,55 +17,59 @@ import sapling8 from '../assets/sapling8.png';
 import sapling9 from '../assets/sapling9.png';
 import platform from '../assets/platform.png';
 
-const stage1 = [sapling1, sapling2, sapling3];
+const stage1 = [sapling1, sapling2];
 const stage2 = [sapling4, sapling5];
 const stage3 = [sapling6, sapling7];
 const stage4 = [sapling8, sapling9];
 
 // get user score here
 // set timeout -  1 second
-const userScore = connection.get("/users/score").then((res) => {console.log(res.data)});
-
-let saplingImages = [];
 
 const SaplingView = () => {
+  const [userScore, setUserScore] = useState(0);
+  const [saplingImage, setSaplingImage] = useState(stage1[0])
+  const [animation, setAnimation] = useState(0)
   useEffect(() => {
     const fetchUserScore = async () => {
       const response = await connection.get("/users/score");
-      setUserScore(response.data);
+      setUserScore(response.data.score);
     };
 
-    const timeout = setTimeout(() => {
+    setInterval(() => {
       fetchUserScore();
+      console.log("check")
     }, 1000);
 
-    return () => clearTimeout(timeout);
+    setInterval(() => {
+      if(animation === 0) {
+        setAnimation(1);
+      } else {
+        setAnimation(0);
+      }
+    }, 500);
+
+    // return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
     if (userScore === null) return;
 
     if (userScore < 4) {
-      saplingImages = stage1;
+      setSaplingImage(stage1);
     } else if (userScore > 3 && userScore < 7) {
-      saplingImages = stage2;
+      setSaplingImage(stage2);
     } else if (userScore > 6 && userScore < 10) {
-      saplingImages = stage3;
+      setSaplingImage(stage3);
     } else {
-      saplingImages = stage4;
+      setSaplingImage(stage4);
     }
   }, [userScore]);
-
-  const getRandomSaplingImage = () => {
-      const randomIndex = Math.floor(Math.random() * saplingImages.length);
-      return saplingImages[randomIndex];
-  };
 
   return (
     <div className="overlay-container">
         <img src={platform} alt="platform" className="platform"/>
-        {saplingImages.map((sapling, index) => (
-        <img key={index} src={getRandomSaplingImage()} alt={'sapling${index}'} className="sapling"/>))}
+        <img src={saplingImage[animation]} alt={'sapling'} className="sapling"/>
+        
       </div>
     );
 };
