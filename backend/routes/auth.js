@@ -1,5 +1,6 @@
 const db = require('../models');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const generateSillyName = require('../functions/generateSillyName');
 const router = require('express').Router()
 
 router.post('/login', async (req, res) => {
@@ -25,16 +26,15 @@ router.post('/login', async (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
-  const email = req.body.email, password = req.body.password, name = req.body.name;
+  const email = req.body.email, password = req.body.password;
 
-  console.log(email)
-  if (!email || !password || !name || !(email.endsWith("@g.austincc.edu"))) {return res.json({ error: true, message: "Parameter missing or invalid" })}
-
+  if (!email || !password || !(email.endsWith("@g.austincc.edu"))) {return res.json({ error: true, message: "Parameter missing or invalid" })}
+  
+  name = generateSillyName();
 
   db.userAuth.findOne({ where: { email } }).then( async (user) => {
-    const nameUser = await db.userPub.findOne({ where: { name } });
 
-    if(user || nameUser) return res.json({error: true, message: "User with name exists" });
+    if(user) return res.json({error: true, message: "User with name exists" });
 
     bcrypt.hash(password, 10, (err, hash) => {
       db.userPub.create({ name, userAuth: { email, password: hash } }, { include: db.userAuth }).then( async (user) => {

@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const cors = require('cors');
 
 // Create Express app
 const app = express();
@@ -9,6 +10,9 @@ const app = express();
 // Parse incoming request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// CORS
+app.use(cors());
 
 // Session
 app.use(session({
