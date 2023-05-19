@@ -7,15 +7,19 @@ export default function Nav() {
   const [showMobile, setShowMobile] = useState(false);
 
   return (
-    <nav className='bg-zinc-900 text-zinc-50 select-none'>
-      <div className='mx-auto mr-4'>
+    <nav style={{fontFamily:'Jost', height:'100px', backgroundColor:' #3aadaa'}} className='text-zinc-50 select-none'>
+      <div style={{}} className='mx-auto mr-4'>
         <div className='flex justify-between items-center'>
           <header>
             <title>mindfulU</title>
             <img
               src={logo}
               alt='a gorgeous logo'
-              style={{ width: "200px", height: "auto" }}
+              style={{  display: 'block',
+                maxWidth:'230px',
+                maxHeight:'95px',
+                width: 'auto',
+                height: 'auto',}}
             />
           </header>
           {/* Nav Links */}

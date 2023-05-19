@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./HealthDimensions.css";
 
 
-const HealthDimensions = ({ handleChange , font}) => {
+const HealthDimensions = ({ handleChange}) => {
   return (
-    <div className="dimensions">
+    <div  style={{}} className="dimensions">
       <button style={{fontFamily:'Jost'}} id="physical-btn" className="btn physical-btn" onClick={() => {handleChange("Physical")}}>Physical</button>
       <button style={{fontFamily:'Jost'}} id="emotional-btn" className="btn emotional-btn" onClick={() => {handleChange("Emotional")}}>Emotional</button>
       <button style={{fontFamily:'Jost'}} id="intellectual-btn" className="btn intellectual-btn" onClick={() => {handleChange("Intellectual")}}>Intellectual</button>
