@@ -7,29 +7,30 @@ import NavRoute from "./components/NavRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 
+Modal.setAppElement('#root');
 
 function App() {
   return (
-    <div className='App w-full h-full'>
+    <div className="App w-full h-full">
       <BrowserRouter>
         <Routes>
-          <Route path='/about' element={<About />} />
+          <Route path="/about" element={<About />} />
 
           <Route element={<NavRoute />}>
             {/* routes with nav here */}
 
             <Route
-              element={<ProtectedRoute authed={true} redirectPath='/about' />}
+              element={<ProtectedRoute authed={true} redirectPath="/about" />}
             >
-              <Route path='/game' element={<Game />} />
+              <Route path="/game" element={<Game />} />
 
-              <Route path='/user' element={<Profile />} />
+              <Route path="/user" element={<Profile />} />
 
-              <Route path='/mindful' element={<Social />} />
+              <Route path="/mindful" element={<Social />} />
             </Route>
           </Route>
 
-          <Route path='*' element={<Navigate to='/about' replace />} />
+          <Route path="*" element={<Navigate to="/about" replace />} />
         </Routes>
       </BrowserRouter>
     </div>

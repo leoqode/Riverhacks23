@@ -1,3 +1,5 @@
+// SocialPagePostButton.js
+
 import SocialPagePostForm from "./SocialPagePostForm";
 import React from "react";
 import Button from "react-bootstrap/Button";
@@ -6,39 +8,37 @@ import { useState } from "react";
 
 const SocialPagePostButton = () => {
   const bodyPrompt = "What are you feeling good about today?";
-  const [postClicked, setPostClicked] = useState(false);
+  const [postClicked, setpostClicked] = useState(false);
 
   const handlePostButton = () => {
-    setPostClicked(!postClicked);
+    setpostClicked(!postClicked);
   };
 
   return (
     <div
       style={{
         backgroundImage: `url(${image})`,
-        backgroundRepeat: "repeat-x",
-        backgroundSize: "auto",
+        backgroundRepeat: "repeat-x", // Image will repeat horizontally
+        backgroundSize: "auto", // Image will keep its original dimensions
         backgroundPosition: "center",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "end" }}>
-        <Button
-          onClick={handlePostButton}
-          variant="success"
-          className="bg-success"
-        >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "end",
+        }}
+      >
+        <Button onClick={handlePostButton} variant='success' className='bg-success'>
           Post!
         </Button>{" "}
-        {postClicked && (
-          <>
-            <div className="dim-background"></div>
-            <SocialPagePostForm
-              username="john apple"
-              mood="happy"
-              bodyPrompt={bodyPrompt}
-            />
-          </>
-        )}
+        <SocialPagePostForm
+          isOpen={postClicked}
+          onRequestClose={handlePostButton}
+          username="john apple"
+          mood="happy"
+          bodyPrompt={bodyPrompt}
+        />
       </div>
     </div>
   );
