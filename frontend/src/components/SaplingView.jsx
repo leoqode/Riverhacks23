@@ -23,7 +23,8 @@ const stage3 = [sapling6, sapling7];
 const stage4 = [sapling8, sapling9];
 
 // get user score here
-const userScore = connection.get("/api/users/score").then((res) => {console.log(res.data)});
+// set timeout -  1 second
+const userScore = connection.get("/users/score").then((res) => {console.log(res.data)});
 
 let saplingImages = [];
 
@@ -48,7 +49,7 @@ const SaplingView = () => {
     return (
         <div className="overlay-container">
         <img src={platform} alt="platform" className="platform"/>
-        
+
         {saplingImages.map((sapling, index) => (
         <img key={index} src={getRandomSaplingImage()} alt={'sapling${index}'} className="sapling"/>
       ))}
