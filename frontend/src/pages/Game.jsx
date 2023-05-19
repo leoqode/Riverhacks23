@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Game.css';
 import connection from "../api/connection.js";
 
-function Game() {
+function Game({font}) {
   
   const [dimension, setDimension] = useState("Physical");
   const [activeTask, setActiveTask] = useState(null);
@@ -38,16 +38,16 @@ function Game() {
 
   return (
     <>
-    <SaplingView/>
-    <HealthDimensions handleChange={handleChangeDimensions}/>
+    <SaplingView />
+    <HealthDimensions font={font} handleChange={handleChangeDimensions}/>
     {sampleTasks[dimension].map((task) => (
-        <TaskItem key={task.title} task={task} onToggle={handleToggle}/>
+        <TaskItem font={font} key={task.title} task={task} onToggle={handleToggle}/>
       ))}
     {activeTask ?
-        <div className="modall">
+        <div style={{fontFamily:'Jost'}} className="modall">
         Do you want to publicly post this?  
-        <button className="yes-btn btn" onClick={() => handlePost(activeTask)}>Yes</button>
-        <button className="no-btn btn" onClick={() => handleMakeTask(activeTask)}>No</button>
+        <button style={{fontFamily:'Jost'}} className="yes-btn btn" onClick={() => handlePost(activeTask)}>Yes</button>
+        <button style={{fontFamily:'Jost'}} className="no-btn btn" onClick={() => handleMakeTask(activeTask)}>No</button>
       </div> : null
   }
 

@@ -6,10 +6,14 @@ import Profile from './pages/Profile';
 import Social from './pages/Social';
 import NavRoute from './components/NavRoute'
 import ProtectedRoute from './components/ProtectedRoute';
+import '../src/index.css';
 
 function App() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+
+  const fontLike = 'Jost';
 
   return (
     <div className="App w-full h-full">
@@ -24,21 +28,21 @@ function App() {
           <Route element={<NavRoute/>} >
             {/* routes with nav here */}
 
-            <Route element={<ProtectedRoute authed={!!user} redirectPath='/about'/>}>
+            <Route element={<ProtectedRoute authed={true} redirectPath='/about'/>}>
 
               <Route
                 path='/game'
-                element={<Game/>}
+                element={<Game font={fontLike}/>}
                 />
 
               <Route 
                 path='/user' 
-                element={<Profile/>}
+                element={<Profile font={fontLike}/>}
                 />
 
               <Route
                 path='/mindful'
-                element={<Social/>}
+                element={<Social font={fontLike}/>}
                 />
 
             </Route>

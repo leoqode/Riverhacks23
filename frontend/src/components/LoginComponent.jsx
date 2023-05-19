@@ -16,12 +16,12 @@ const LoginComponent = ({id, setUser}) => {
   return (
     <div id={id} >
       <form onSubmit={handleSubmit}>
-        <label>ACC Email: </label>
-        <input type='text' name="email" placeholder='g.austincc.edu' />
-        <label>Password: </label>
-        <input type='password' name="password" placeholder='password' />
+        <label style={{fontFamily:'Jost'}}>ACC Email: </label>
+        <input style={{fontFamily:'Jost'}} type='text' name="email" placeholder='g.austincc.edu' />
+        <label style={{fontFamily:'Jost'}}>Password: </label>
+        <input style={{fontFamily:'Jost'}} type='password' name="password" placeholder='password' />
         {/* Sign Up button */}
-        <button onSubmit={handleSubmit} type='submit'>
+        <button style={{fontFamily:'Jost'}} onSubmit={handleSubmit} type='submit'>
           Sign Up
         </button>
       </form>

@@ -38,6 +38,7 @@ function SocialPagePostCard({ cards, onDeleteCard }) {
           key={index}
           text={false}
           style={{
+            fontFamily:'Jost',
             width: "100%",
             display: "flex",
             borderRadius: "2px",
@@ -45,12 +46,13 @@ function SocialPagePostCard({ cards, onDeleteCard }) {
           }}
           className="mb-2"
         >
-          <div className="social-delete-button">
+          <div className="social-delete-button" style={{fontFamily:'Jost'}} >
             <Button
 
               variant="primary"
               onClick={() => handleDeleteClick(card)}
               style={{
+                fontFamily:'Jost',
                 position: "absolute",
                 top: "0",
                 right: "0",
@@ -62,26 +64,30 @@ function SocialPagePostCard({ cards, onDeleteCard }) {
               Delete
             </Button>
           </div>
-          <Card.Header className="text-start">
-            <strong className="text-uppercase">{card.title}</strong>
+
+
+          <Card.Header style={{fontFamily:'Jost'}} className="text-start">
+            <strong className="text-uppercase">{card.tile}</strong>
           </Card.Header>
-          <Card.Body className="d-flex flex-inline align-items-center justify-content-center">
-            <div className="card-text-class">{card.body}</div>
+          <Card.Body style={{fontFamily:'Jost'}} className="d-flex flex-inline align-items-center justify-content-center">
+
+            <div  style={{fontFamily:'Jost'}} className="card-text-class">{card.body}</div>
+
           </Card.Body>
         </Card>
       ))}
 
       <Modal show={showConfirmation} onHide={handleCancelDelete} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Confirm Deletion</Modal.Title>
+          <Modal.Title style={{fontFamily:'Jost'}} >Confirm Deletion</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to delete this card?</Modal.Body>
+        <Modal.Body style={{fontFamily:'Jost'}}>Are you sure you want to delete this card?</Modal.Body>
         <Modal.Footer>
-          <Button style={{backgroundColor:'green', color:'white'}} variant="secondary" onClick={handleCancelDelete}>
+          <Button style={{backgroundColor:'green', color:'white',fontFamily:'Jost'}} variant="secondary" onClick={handleCancelDelete}>
             Cancel
           </Button>
 
-          <Button style={{backgroundColor:'red', color:'white'}} variant="danger" onClick={handleConfirmDelete}>
+          <Button style={{backgroundColor:'red', color:'white',fontFamily:'Jost'}} variant="danger" onClick={handleConfirmDelete}>
             Delete
           </Button>
         </Modal.Footer>

@@ -48,14 +48,14 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
 
   return (
     <>
-      <Button onClick={openModal} variant="success" className="bg-success">
+      <Button style={{fontFamily:'Jost'}} onClick={openModal} variant="success" className="bg-success">
         Create Post
       </Button>
 
       <Modal show={isOpen} onHide={closeModal} size="lg" centered style={{color: 'green'}}>
         <Modal.Header closeButton>
         <Form.Group controlId="input-social-form-subject">
-              <Form.Label>Subject</Form.Label>
+              <Form.Label style={{fontFamily:'Jost'}} >Subject</Form.Label>
               <Form.Control
                 size="sm"
                 as="textarea"
@@ -70,7 +70,7 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="input-social-form-body">
-              <Form.Label>Post Text</Form.Label>
+              <Form.Label style={{fontFamily:'Jost'}} >Post Text</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
@@ -81,7 +81,7 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
             </Form.Group>
 
             <Form.Group controlId="input-social-form-mood">
-              <Form.Label>Mood</Form.Label>
+              <Form.Label style={{fontFamily:'Jost'}} >Mood</Form.Label>
               <Dropdown  onSelect={handleMoodSelect}>
                 <Dropdown.Toggle style={{backgroundColor:'green'}} variant="success" id="dropdown-basic">
                   {selectedMood ? (
@@ -93,19 +93,19 @@ const SocialPagePostForm = ({ onPostSubmit }) => {
                   )}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item eventKey="happy">Happy</Dropdown.Item>
-                  <Dropdown.Item eventKey="accomplished">Accomplished</Dropdown.Item>
-                  <Dropdown.Item eventKey="excited">Excited</Dropdown.Item>
+                  <Dropdown.Item style={{fontFamily:'Jost'}} eventKey="happy">Happy</Dropdown.Item>
+                  <Dropdown.Item style={{fontFamily:'Jost'}} eventKey="accomplished">Accomplished</Dropdown.Item>
+                  <Dropdown.Item style={{fontFamily:'Jost'}} eventKey="excited">Excited</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button style={{color:'white', backgroundColor:'green', borderColor:'black'}} variant="primary" type="submit" onClick={handleSubmit}>
+          <Button style={{color:'white', backgroundColor:'green', borderColor:'black',fontFamily:'Jost'}} variant="primary" type="submit" onClick={handleSubmit}>
             Submit
           </Button>
-          <Button style={{color:'black'}} variant="secondary" onClick={closeModal}>
+          <Button style={{color:'black',fontFamily:'Jost'}} variant="secondary" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>
