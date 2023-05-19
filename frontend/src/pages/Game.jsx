@@ -27,6 +27,7 @@ function Game() {
   const handlePost = (task) => {
     console.log("Task posted:", task);
     // TODO link to api create post
+    connection.post("/posts/create", { title: task.title, body: task.weight, mood: "Happy"}).then((res) => {console.log(res.data)})
     setActiveTask(null)
   }
 
