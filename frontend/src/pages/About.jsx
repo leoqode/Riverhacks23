@@ -1,9 +1,9 @@
 import LandingPage from '../components/LandingPage.jsx'
 
-function About() {
+function About({ setUser }) {
   return (
     <>
-    <LandingPage/>
+    <LandingPage setUser={setUser}/>
     </>
   )
 }

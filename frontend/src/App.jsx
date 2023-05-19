@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { useState } from 'react';
 import About from './pages/About'
 import Game from './pages/Game'
 import Profile from './pages/Profile';
@@ -7,6 +8,7 @@ import NavRoute from './components/NavRoute'
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
+  const [user, setUser] = useState(null);
 
   return (
     <div className="App w-full h-full">
@@ -16,13 +18,13 @@ function App() {
         <Routes>
           <Route
                 path='/about'
-                element={<About/>}
+                element={<About setUser={(user) => {setUser(user)}}/>}
                 />
           
           <Route element={<NavRoute/>} >
             {/* routes with nav here */}
 
-            <Route element={<ProtectedRoute authed={true} redirectPath='/about'/>}>
+            <Route element={<ProtectedRoute authed={!!user} redirectPath='/about'/>}>
               
               <Route
                 path='/game'

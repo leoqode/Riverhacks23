@@ -5,7 +5,7 @@ import SignupComponent from "./SignupComponent";
 import LoginComponent from "./LoginComponent";
 import { useState } from "react";
 
-const LandingPage = () => {
+const LandingPage = ({ setUser }) => {
   const [landingPageLoginButtonExtended, setLandingPageLoginButtonExtended] =
     useState(false);
   const [landingPageSignupButtonExtended, setLandingPageSignupButtonExtended] =
@@ -39,7 +39,7 @@ const LandingPage = () => {
           style={{ width: "200px", height: "auto" }}
         />
       </header>
-      <body>
+      <div>
         <div>Welcome! Ready to feel good?</div>
         <button
           onClick={handleLoginSignupButtonClick}
@@ -51,13 +51,13 @@ const LandingPage = () => {
           Sign Up
         </button>
         {landingPageLoginButtonExtended && (
-          <LoginComponent id='login-component-extended' />
+          <LoginComponent id='login-component-extended' setUser={setUser} />
         )}
 
         {landingPageSignupButtonExtended && (
-          <SignupComponent id='signup-component-extended' />
+          <SignupComponent id='signup-component-extended' setUser={setUser} />
         )}
-      </body>
+      </div>
 
       <footer>
         <div> Contact us!</div>
