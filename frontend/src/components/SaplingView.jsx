@@ -37,7 +37,6 @@ const SaplingView = () => {
 
     setInterval(() => {
       fetchUserScore();
-      console.log("check")
     }, 1000);
 
     setInterval(() => {

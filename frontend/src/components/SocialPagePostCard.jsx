@@ -67,7 +67,7 @@ function SocialPagePostCard({ cards, onDeleteCard }) {
 
 
           <Card.Header style={{fontFamily:'Jost'}} className="text-start">
-            <strong className="text-uppercase">{card.tile}</strong>
+            <strong className="text-uppercase">{card.title}</strong>
           </Card.Header>
           <Card.Body style={{fontFamily:'Jost'}} className="d-flex flex-inline align-items-center justify-content-center">
 

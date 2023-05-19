@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SocialPagePostCard from "./SocialPagePostCard";
 import SocialPagePostButton from "./SocialPagePostButton";
 import Loader from "./Loader";
@@ -17,6 +17,10 @@ const SocialPage = () => {
     setCards([...cards, newCard]);
     connection.post("/posts/create", newCard).then((res) => {console.log(res.data)})
   };
+
+  useEffect(() => {
+    fetchMoreCards();
+  }, [])
 
   const handleDeleteCard = (index) => {
     const updatedCards = [...cards];
