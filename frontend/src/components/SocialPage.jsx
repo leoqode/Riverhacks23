@@ -1,23 +1,21 @@
-import React, { useState, useCallback } from "react";
+import { useState } from "react";
 import SocialPagePostCard from "./SocialPagePostCard";
 import SocialPagePostButton from "./SocialPagePostButton";
-import { useInView } from "react-intersection-observer";
 import Loader from "./Loader";
-import { useEffect } from "react";
-import axios from "axios";
+import connection from "../api/connection";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const SocialPage = () => {
   const [cards, setCards] = useState([]);
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handlePostSubmit = (newPost) => {
     const newCard = {
-      subject: newPost.subjectText,
-      postText: newPost.postText,
+      title: newPost.subjectText,
+      body: newPost.postText,
       mood: newPost.mood,
     };
     setCards([...cards, newCard]);
+    connection.post("/posts/create", newCard).then((res) => {console.log(res.data)})
   };
 
   const handleDeleteCard = (index) => {
@@ -26,42 +24,36 @@ const SocialPage = () => {
     setCards(updatedCards);
   };
 
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
+  
+  const fetchMoreCards = () => {
+    connection.get("/posts/posts", {params: { offset: cards.length, limit: 10 }}).then(newCards => {
+      console.log(newCards.data.posts)
+      setCards(cards.concat(newCards.data.posts))
+    })
+  }
+  
 
-  const loadMorePosts = async () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >=
-      document.documentElement.scrollHeight
-    ) {
-      setIsLoading(true);
-      setPage((prev) => prev + 1);
-    }
-  };
-
-  React.useEffect(() => {
-    if (inView) {
-      loadMorePosts();
-    }
-  }, [inView, loadMorePosts]);
-  useEffect(() => {
-    setTimeout(async () => {
-        const response = await axios.get(
-            ""
-        )
-        setIsLoading(false);
-    }, 1500);
-}, [cards]);
+  
   return (
     
     <div>
       <SocialPagePostButton onPostSubmit={handlePostSubmit} />
+      <div className='parent-container'>
+        <InfiniteScroll
+        dataLength={cards.length}
+        inverse={true}
+        next={fetchMoreCards}
+        scrollThreshold={0.8}
+        hasMore={true}
+        loader={<div className="h-16 my-8"><Loader></Loader></div>}
+        scrollableTarget={`Cards--scroller`}
+        style={{ display: 'flex', flexDirection: 'column' }}
+        className="pb-2"
+        >
       <div style={{ justifyContent: "center" }}>
         <SocialPagePostCard cards={cards} onDeleteCard={handleDeleteCard} />
       </div>
-      <div className='parent-container' ref={ref}>
-        {isLoading && <Loader />}
+        </InfiniteScroll>
       </div>
     </div>
   );

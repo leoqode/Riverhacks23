@@ -63,11 +63,10 @@ function SocialPagePostCard({ cards, onDeleteCard }) {
             </Button>
           </div>
           <Card.Header className="text-start">
-            <strong className="text-uppercase">{card.subject}</strong>
+            <strong className="text-uppercase">{card.title}</strong>
           </Card.Header>
           <Card.Body className="d-flex flex-inline align-items-center justify-content-center">
-            <Card.Title>{card.cardTitle}</Card.Title>
-            <div className="card-text-class">{card.postText}</div>
+            <div className="card-text-class">{card.body}</div>
           </Card.Body>
         </Card>
       ))}
