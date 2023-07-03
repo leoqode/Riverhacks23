@@ -1,6 +1,5 @@
 # YouthfulU - Riverhacks Winner 2023
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Description
 This project was developed as part of a 24-hour hackathon with a team of 4 people. The goal was to create something related to mental health that could provide benefits to users. Initially, we brainstormed ideas and considered building a chatbot, but we wanted to be more original and add a unique twist.
